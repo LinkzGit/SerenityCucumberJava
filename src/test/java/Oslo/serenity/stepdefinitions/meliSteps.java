@@ -17,7 +17,8 @@ public class meliSteps {
         Oslo.escribir("Yerba", meliPage.SEARCH_BOX);
         Oslo.clickEn(meliPage.PRIMER_YERBA);
         Oslo.clickEn(meliPage.AGREGAR_UNO_MAS);
-
     }
+
+   //@Then("I can verify evrth")
 
 }

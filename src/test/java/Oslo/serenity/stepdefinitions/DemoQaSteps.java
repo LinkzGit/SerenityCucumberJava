@@ -5,7 +5,6 @@ import Oslo.serenity.pageobject.formsPage;
 import Oslo.serenity.questions.DemoQuestions;
 import Oslo.serenity.tasks.DemoQaTask;
 import Oslo.utils.Oslo;
-import VeneciaProject.Venecia;
 import com.sun.security.auth.module.Krb5LoginModule;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -43,7 +42,7 @@ public class DemoQaSteps {
     @Given("I navigate to DemoQA")
     public void ingresoLandingPage() {
         OnStage.setTheStage(new OnlineCast());
-        theActorCalled("Venecia");
+        theActorCalled("Oslo");
         //Obtiene la URL
         String baseUrl = EnvironmentSpecificConfiguration.from(environmentVariables)
                 .getProperty("webdriver.base.url.pipeline");
@@ -55,22 +54,25 @@ public class DemoQaSteps {
     @Then("I can click on the Forms option")
     public void clickFormsOption() {
         theActorInTheSpotlight().attemptsTo(
+                Oslo.scrollToBottom(),
                 Oslo.clickEn(formsPage.FORMS_PAGE),
                 Oslo.clickEn(formsPage.PRACTICE_FORM)
         );
-        theActorInTheSpotlight().attemptsTo(
 
-        );
     }
 
     @And("Fill out the form")
     public void rellenarCampos() {
         String file = "src/test/resources/filesResources/GQhaRt9XQAAsVs4.jpeg";
         theActorInTheSpotlight().attemptsTo(
+                Oslo.scrollToBottom(),
                 DemoQAinteractions.camposDatosPersonales(),
                 DemoQaTask.clickCallendar(),
                 DemoQaTask.fillCallendar(),
-                DemoQaTask.fillAddress()
+                DemoQaTask.fillAddress(),
+                DemoQaTask.fillHobbies(),
+                DemoQaTask.fillSubject(),
+                DemoQaTask.fillPhone()
         );
         theActorInTheSpotlight().attemptsTo(
                 Oslo.subirArchivo(file,formsPage.UPLOAD_PICTURE_BTN)
@@ -78,11 +80,17 @@ public class DemoQaSteps {
 
     }
 
-    @Then("Submit")
+    @And("Submit")
     public void sendSubmitButton() {
         theActorInTheSpotlight().attemptsTo(
                 Oslo.scrollToBottom(),
                 DemoQaTask.clickSubmit()
         );
     }
+    @Then("I can check that it worked with no errors")
+    public void checkFinalStep(){
+        theActorInTheSpotlight().attemptsTo(
+                Oslo.esperarTexto(formsPage.FINAL_STEP, "Thanks for submitting the form"));
+    }
+
 }
