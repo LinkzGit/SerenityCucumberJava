@@ -24,5 +24,5 @@ public class formsPage {
     public static Target STATE_BOX = Target.the("Estado").located(By.xpath("//div[contains(text(),'Select State')]"));
     public static Target CITY_BOX = Target.the("Ciudad").located(By.xpath("//div[contains(text(),'Select City')]"));
     public static Target SUBMIT_BUTTON = Target.the("Boton Submit").located(By.xpath("//button[@id='submit']"));
-
+    public static Target FINAL_STEP = Target.the("Titulo Final").located(By.xpath("//div[@id='example-modal-sizes-title-lg']"));
 }

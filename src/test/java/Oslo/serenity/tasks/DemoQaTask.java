@@ -67,7 +67,7 @@ public class DemoQaTask extends Oslo {
         );
 
     }
-
+    public static Performable fillPhone() { return Oslo.escribir("1539261132", formsPage.MOBILE_NUMBER);}
     public static Performable clickSubmit() {
         return Oslo.clickEn(formsPage.SUBMIT_BUTTON);
     }
