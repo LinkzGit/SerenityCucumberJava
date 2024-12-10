@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resources/features/MELI.feature"},
         glue = "Oslo.serenity.stepdefinitions",
-        tags = ""
+        tags = "@MELI"
 )
 public class meliRunner {
 }

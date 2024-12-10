@@ -66,13 +66,7 @@ public class DemoQaSteps {
         String file = "src/test/resources/filesResources/GQhaRt9XQAAsVs4.jpeg";
         theActorInTheSpotlight().attemptsTo(
                 Oslo.scrollToBottom(),
-                DemoQAinteractions.camposDatosPersonales(),
-                DemoQaTask.clickCallendar(),
-                DemoQaTask.fillCallendar(),
-                DemoQaTask.fillAddress(),
-                DemoQaTask.fillHobbies(),
-                DemoQaTask.fillSubject(),
-                DemoQaTask.fillPhone()
+                DemoQAinteractions.camposDatosPersonales()
         );
         theActorInTheSpotlight().attemptsTo(
                 Oslo.subirArchivo(file,formsPage.UPLOAD_PICTURE_BTN)

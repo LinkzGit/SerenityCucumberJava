@@ -13,7 +13,13 @@ public class DemoQAinteractions {
                 DemoQaTask.fillName(),
                 DemoQaTask.fillSurname(),
                 DemoQaTask.fillEmail(),
-                DemoQaTask.selectGender()
+                DemoQaTask.selectGender(),
+                DemoQaTask.clickCallendar(),
+                DemoQaTask.fillCallendar(),
+                DemoQaTask.fillAddress(),
+                DemoQaTask.fillHobbies(),
+                DemoQaTask.fillSubject(),
+                DemoQaTask.fillPhone()
         );
     }
 }
